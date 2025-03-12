@@ -1,11 +1,31 @@
-import React from 'react'
+// Home.jsx
+import React, { useEffect, useState } from 'react';
+import api from '../API/config';
+import BookCard from './BookCard'; // Adjust the import path if needed
 
 const Home = () => {
-  return (
-    <div className='font-bold text-4xl'>
- i am a homepage
-    </div>
-  )
-}
+  const [bookList, setBookList] = useState([]);
 
-export default Home
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await api.get("/books");
+        setBookList(res.data);
+        console.log(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  return (
+    <div className="flex flex-wrap justify-center p-4">
+      {bookList.map((book, index) => (
+        <BookCard key={index} book={book} />
+      ))}
+    </div>
+  );
+};
+
+export default Home;
