@@ -2,8 +2,8 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div>
-      I am a homepage
+    <div className='font-bold text-4xl'>
+ i am a homepage
     </div>
   )
 }
