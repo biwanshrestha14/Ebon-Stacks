@@ -82,13 +82,20 @@ export default class BooksController {
     if (q) {
       const data = await bookModel.findAll({
         where: {
-          [Op.or]: [
-            { name: { [Op.like]: `%${q}%` } },
-            { author: { [Op.like]: `%${q}%` } },
-            { genre: { [Op.like]: `%${q}%` } },
-          ],
-        },
+          [Op.or]: {
+            name:{
+              [Op.like]:`%${q}%`
+            },
+            author:{
+              [Op.like]:`%${q}%`,
+            },
+          },
+        },raw:true,
       });
+      for(let d of data){
+        d.image = urlconst.IMG_PATH_URL+d.image;
+        // console.log(d.dataValues.image);
+      }
       res.json(data);
       console.log(data);
     } else {
