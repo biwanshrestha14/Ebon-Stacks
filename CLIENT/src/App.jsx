@@ -6,7 +6,7 @@ import AddBook from './components/AddBook'
 import Layout from './components/Layout'
 import Notfound from './components/Notfound'
 import Explore from './components/Explore'
-import Booklist from './components/Booklist'
+
 
 const App = () => {
   return (
@@ -15,7 +15,7 @@ const App = () => {
       <Route path='/' element={<Layout/>}>
       <Route  index element={<Home/>}  />
       <Route path="/explore" element={<Explore/>}/>
-      <Route path="/booklist" element={<Booklist/>}/>
+     
         <Route path='/addbook'>
           <Route index element={<AddBook />} />
         </Route>

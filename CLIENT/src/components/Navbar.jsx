@@ -25,11 +25,7 @@ const Navbar = () => {
               Add Book
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/booklist" className="hover:text-blue-400 transition">
-              Delete Book
-            </NavLink>
-          </li>
+          
         </ul>
 
         {/* Mobile Menu Button */}
