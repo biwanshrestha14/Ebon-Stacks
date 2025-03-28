@@ -74,9 +74,3 @@ This project demonstrates my proficiency in full-stack development, showcasing m
 5. **Access the Application:**
    Open `http://localhost:3000` in your browser.
 
-## Contributing
-Feel free to contribute by submitting issues, feature requests, or pull requests.
-
-## License
-This project is licensed under the MIT License.
-
